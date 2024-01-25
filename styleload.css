@@ -9,6 +9,7 @@ body {
     width: 100vw;
     height: 100vw;
     font-family: "Aeonik_OVERVIEW";
+    overflow-x: hidden;
 }
 .loading-screen {
     position: fixed;
@@ -45,10 +46,12 @@ body {
 
 .loader-2 {
     width: 22vw;
+    left: -1%;
 }
 
 .loader-3 {
     width: 20vw;
+    left: -1%;
 }
 
 .website-content {
