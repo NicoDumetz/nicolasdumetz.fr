@@ -1,3 +1,4 @@
+
 gsap.from(".loader-1", {
     width: 0,
     duration: 2,
@@ -31,7 +32,7 @@ gsap.to(".loader-1", {
 });
 
 gsap.to(".loader-2", {
-    rotate: 51,
+    rotate: 47.5,
     x: 0,
     y: 0,
     duration: 0.5,
