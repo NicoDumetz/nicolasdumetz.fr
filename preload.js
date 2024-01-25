@@ -24,7 +24,7 @@ gsap.to(".loader", {
 
 gsap.to(".loader-1", {
     rotate: 90,
-    y: "-50%",
+    y: 0,
     x: "65%",
     duration: 0.5,
     delay: 2.5,
@@ -33,28 +33,26 @@ gsap.to(".loader-1", {
 gsap.to(".loader-2", {
     rotate: 49,
     x: 0,
-    y: "-50%",
+    y: 0,
     duration: 0.5,
 }, "<");
 
 gsap.to(".loader-3", {
     rotate: 90,
     x: "-65%",
-    y: "-50%",
+    y: 0,
     duration: 0.5,
 }, "<");
 
 gsap.to(".loader", {
     delay: 3,
-    scale: 44,
+    scale: 50,
     duration: 1,
     ease: "power2.inOut",
 });
 
 gsap.to(".loader", {
-    rotate: 45,
-    y: "50vh",
-    x: "-30vw",
+    rotate: 65,
     duration: 1,
     delay: 3,
     ease: "power2.inOut",
