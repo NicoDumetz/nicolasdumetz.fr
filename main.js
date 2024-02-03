@@ -1,6 +1,6 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import * as THREE from '/three';
+import { GLTFLoader } from '/three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from '/three/addons/controls/OrbitControls.js';
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000);
@@ -24,7 +24,7 @@ loader.load( 'space/scene.gltf', (gltf) => {
                 camera.rotation.x -= 0.01;
             }
             if (caca == 1) {
-                camera.position.z += 0.1;
+                camera.position.z += 0.5;
                 // camera.rotation.y += 0.01;
                 // camera.rotation.x -= 0.01;
             }
