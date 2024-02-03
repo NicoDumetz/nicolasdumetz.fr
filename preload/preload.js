@@ -25,13 +25,13 @@ gsap.to(".loader", {
 gsap.to(".loader-1", {
     rotate: 90,
     y: 0,
-    x: "65%",
+    x: "61%",
     duration: 0.5,
     delay: 2.5,
 });
 
 gsap.to(".loader-2", {
-    rotate: 46.75,
+    rotate: 46,
     x: 0,
     y: 0,
     duration: 0.5,
@@ -39,7 +39,7 @@ gsap.to(".loader-2", {
 
 gsap.to(".loader-3", {
     rotate: 90,
-    x: "-65%",
+    x: "-64%", //-65%
     y: 0,
     duration: 0.5,
 }, "<");
