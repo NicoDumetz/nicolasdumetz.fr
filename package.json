@@ -1,9 +1,10 @@
 {
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "rollup -c rollup.config.mjs"
   },
   "dependencies": {
+    "rollup-plugin-terser": "^7.0.2",
     "three": "^0.161.0"
   },
   "devDependencies": {
