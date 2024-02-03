@@ -17,20 +17,23 @@ loader.load( 'space/scene.gltf', (gltf) => {
         scene.add(model);
         let caca = 0;
         const animate = function () {
+            console.log(camera.rotation.x)
             requestAnimationFrame(animate);
             if (caca == 0) {
                 camera.position.z -= 0.5;
                 camera.rotation.x -= 0.01;
             }
             if (caca == 1) {
-                camera.position.z += 0.5;
-                camera.rotation.y += 0.01;
-                camera.rotation.x -= 0.01;
+                camera.position.z += 0.1;
+                // camera.rotation.y += 0.01;
+                // camera.rotation.x -= 0.01;
             }
             if (camera.position.z <= -190)
                 caca = 1;
-            if (caca ==  1 && camera.position.z >= 200)
+            if (caca ==  1 && camera.position.z >= 200) {
+                camera.rotation.x = -2
                 caca = 0;
+            }
             renderer.render(scene, camera);
         };
         animate();
