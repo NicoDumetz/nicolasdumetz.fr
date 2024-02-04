@@ -11,7 +11,7 @@ document.body.appendChild(renderer.domElement);
 camera.position.set(20,10,300);
 const loader = new GLTFLoader();
 
-loader.load( './public/space/scene.gltf', (gltf) => {
+loader.load( './space/scene.gltf', (gltf) => {
         const model = gltf.scene;
         model.position.set(-100, -100, 100);
         scene.add(model);
