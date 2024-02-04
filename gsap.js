@@ -66,10 +66,12 @@ gsap.to(".loading-screen", {
 });
 
 gsap.to(".title-anim", {
-    delay: 16,
-    duration: 1,
+    delay: 16.5,
+    duration: 0.25,
     opacity: 0,
-    ease: "power4.out",
+    y: 1000,
+    scale: 40,
+    // ease: "power4.out",
 });
 
 gsap.to(".site", {
