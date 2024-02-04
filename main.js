@@ -8,31 +8,31 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
-camera.position.set(0,0,300);
+camera.position.set(20,10,300);
 const loader = new GLTFLoader();
 
-loader.load( './space/scene.gltf', (gltf) => {
+loader.load( './public/space/scene.gltf', (gltf) => {
         const model = gltf.scene;
         model.position.set(-100, -100, 100);
         scene.add(model);
-        let caca = 0;
+        let change = 0;
         const animate = function () {
             console.log(camera.rotation.x)
             requestAnimationFrame(animate);
-            if (caca == 0) {
+            if (change == 0) {
                 camera.position.z -= 0.5;
                 camera.rotation.x -= 0.01;
             }
-            if (caca == 1) {
-                camera.position.z += 0.5;
+            if (change == 1) {
+                camera.position.z += 3; //0.5
                 // camera.rotation.y += 0.01;
                 // camera.rotation.x -= 0.01;
             }
             if (camera.position.z <= -190)
-                caca = 1;
-            if (caca ==  1 && camera.position.z >= 200) {
+                change = 1;
+            if (change ==  1 && camera.position.z >= 200) {
                 camera.rotation.x = -2
-                caca = 0;
+                change = 0;
             }
             renderer.render(scene, camera);
         };
@@ -40,6 +40,13 @@ loader.load( './space/scene.gltf', (gltf) => {
     },
 );
 
+window.addEventListener('resize', function() {
+    resize();
+});
+
+function resize() {
+    
+}
 
 // const scene = new THREE.Scene();
 // const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 3000);
