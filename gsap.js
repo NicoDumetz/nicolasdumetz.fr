@@ -65,11 +65,16 @@ gsap.to(".loading-screen", {
     ease: "power1.inOut",
 });
 
-// gsap.to("canvas", 1.5, {
-//     delay: 4,
-//     y: -90,
-//     ease: "power4.inOut",
-//     stagger: {
-//         amount: 0.1,
-//     },
-// })
+gsap.to(".title-anim", {
+    delay: 16,
+    duration: 1,
+    opacity: 0,
+    ease: "power4.out",
+});
+
+gsap.to(".site", {
+    delay: 20,
+    duration: 1,
+    ease: "power4.out",
+    opacity: 1,
+})

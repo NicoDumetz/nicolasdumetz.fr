@@ -8,7 +8,7 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
-camera.position.set(20,10,300);
+camera.position.set(0,0,300);
 const loader = new GLTFLoader();
 
 loader.load( './space/scene.gltf', (gltf) => {
@@ -24,30 +24,19 @@ loader.load( './space/scene.gltf', (gltf) => {
                 camera.rotation.x -= 0.01;
             }
             if (change == 1) {
-                camera.position.z += 3; //0.5
-                // camera.rotation.y += 0.01;
-                // camera.rotation.x -= 0.01;
+                camera.position.z += 3;
             }
             if (camera.position.z <= -190)
                 change = 1;
             if (change ==  1 && camera.position.z >= 200) {
                 camera.rotation.x = -2
-                change = 0;
+                change = 4; //Stop, anim loop change = 0
             }
             renderer.render(scene, camera);
         };
         animate();
     },
 );
-
-window.addEventListener('resize', function() {
-    resize();
-});
-
-function resize() {
-    
-}
-
 // const scene = new THREE.Scene();
 // const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 3000);
 
