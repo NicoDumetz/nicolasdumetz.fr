@@ -1,6 +1,7 @@
 body {
     height: 100%;
     margin: 0;
+    overflow: hidden;
 }
 
 canvas {
@@ -90,7 +91,51 @@ body {
     display: flex;
 }
 
-.site h1 {
+.card {
+    position: flex;
+    width: 0;
+    height: 0;
+    top: 40%;
+    left: 50%;
+    box-shadow:
+        0 0 10vw 0vw #ffffff,
+        0 0 2vw 0.4vw #b6b6b6,
+        inset 0 0 .5vw 0.2vw #ffffff,
+        inset 0 0 0.2vw 0.2vw #bebebe,
+        inset 0 0 .25vw 0.2vw #919191;
+
+    animation: increaseHeight 1s ease-in-out 19s forwards, increaseWidth 5s ease-in-out 20s forwards;
+}
+
+@keyframes increaseHeight {
+    from {
+        height: 0;
+    }
+    to {
+        height: 90%;
+    }
+}
+
+@keyframes increaseWidth {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80%;
+    }
+}
+
+.cv {
+    position: absolute;
+    top: 5%;
+    width: 80%;
+    height: 90%;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.cv h1 {
     color: white;
-    text-align: center;
 }

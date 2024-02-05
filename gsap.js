@@ -75,8 +75,16 @@ gsap.to(".title-anim", {
 });
 
 gsap.to(".site", {
-    delay: 20,
+    delay: 19,
     duration: 1,
     ease: "power4.out",
     opacity: 1,
 })
+
+gsap.to(".cv", {
+    delay: 26,
+    duration: 1,
+    ease: "power4.out",
+    opacity: 1,
+})
+
