@@ -87,4 +87,3 @@ gsap.to(".cv", {
     ease: "power4.out",
     opacity: 1,
 })
-

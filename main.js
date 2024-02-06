@@ -11,13 +11,20 @@ document.body.appendChild(renderer.domElement);
 camera.position.set(0,0,300);
 const loader = new GLTFLoader();
 
+
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
+window.addEventListener('resize', onWindowResize);
+
 loader.load( './space/scene.gltf', (gltf) => {
         const model = gltf.scene;
         model.position.set(-100, -100, 100);
         scene.add(model);
         let change = 0;
         const animate = function () {
-            console.log(camera.rotation.x)
             requestAnimationFrame(animate);
             if (change == 0) {
                 camera.position.z -= 0.5;
@@ -37,6 +44,38 @@ loader.load( './space/scene.gltf', (gltf) => {
         animate();
     },
 );
+// resize anim bar at the begining
+function resizebars() {
+    console.log("caca")
+    var bars = document.querySelectorAll('.bar');
+    var viewportWidth = window.innerWidth;
+    var barWidths = [0.2, 0.23, 0.2]; // Largeur initiale des barres (en pourcentage de la largeur de la fenêtre)
+    var newWidths = barWidths.map(function(width) {
+        return width * viewportWidth;
+    });
+    bars.forEach(function(bar, index) {
+        bar.style.width = newWidths[index] + 'px';
+    });
+}
+window.onload = function() {
+    resizebars();
+}
+window.addEventListener('resize', function() {
+    resizebars();
+});
+document.addEventListener('fullscreenchange', function() {
+    console.log("pipi");
+    if (document.fullscreenElement || document.webkitFullscreenElement) {
+        console.log("Mode plein écran activé.");
+    } else {
+        console.log("Mode plein écran désactivé.");
+    }
+    resizeBars();
+});
+
+console.log("Taille de l'écran : " + screen.width + " x " + screen.height);
+
+
 // const scene = new THREE.Scene();
 // const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 3000);
 
