@@ -4,7 +4,8 @@
     "build": "vite build"
   },
   "dependencies": {
-    "three": "^0.161.0"
+    "three": "^0.161.0",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "vite": "^5.0.12",

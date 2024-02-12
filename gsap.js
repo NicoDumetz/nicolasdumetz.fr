@@ -66,7 +66,7 @@ gsap.to(".loading-screen", {
 });
 
 gsap.to(".title-anim", {
-    delay: 16,
+    delay: 15,
     duration: 1,
     opacity: 0,
     // y: 1000,
@@ -75,14 +75,14 @@ gsap.to(".title-anim", {
 });
 
 gsap.to(".site", {
-    delay: 19,
+    delay: 18,
     duration: 1,
     ease: "power4.out",
     opacity: 1,
 })
 
 gsap.to(".cv", {
-    delay: 26,
+    delay: 25,
     duration: 1,
     ease: "power4.out",
     opacity: 1,

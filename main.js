@@ -31,13 +31,16 @@ loader.load( './space/scene.gltf', (gltf) => {
                 camera.rotation.x -= 0.01;
             }
             if (change == 1) {
-                camera.position.z += 3;
+                camera.position.z += 10;
             }
             if (camera.position.z <= -190)
                 change = 1;
             if (change ==  1 && camera.position.z >= 200) {
                 camera.rotation.x = -2
                 change = 4; //Stop, anim loop change = 0
+                setTimeout(() => { // Ajoute une pause de 2 secondes
+                    change = 4; // Réinitialise le changement après la pause
+                }, 2000);
             }
             renderer.render(scene, camera);
         };
@@ -46,7 +49,6 @@ loader.load( './space/scene.gltf', (gltf) => {
 );
 // resize anim bar at the begining
 function resizebars() {
-    console.log("caca")
     var bars = document.querySelectorAll('.bar');
     var viewportWidth = window.innerWidth;
     var barWidths = [0.2, 0.23, 0.2]; // Largeur initiale des barres (en pourcentage de la largeur de la fenêtre)
@@ -64,7 +66,6 @@ window.addEventListener('resize', function() {
     resizebars();
 });
 document.addEventListener('fullscreenchange', function() {
-    console.log("pipi");
     if (document.fullscreenElement || document.webkitFullscreenElement) {
         console.log("Mode plein écran activé.");
     } else {
@@ -73,7 +74,16 @@ document.addEventListener('fullscreenchange', function() {
     resizeBars();
 });
 
-console.log("Taille de l'écran : " + screen.width + " x " + screen.height);
+const titre = document.querySelector("h1.title-anim");
+var typewriter = new Typewriter(titre, {})
+typewriter.pauseFor(6000)
+    .typeString("Hello,")
+    .pauseFor(700)
+    .typeString(" i'm")
+    .pauseFor(900)
+    .typeString(" Nicolas Dumetz.")
+    .pauseFor(600)
+    .start();
 
 
 // const scene = new THREE.Scene();
