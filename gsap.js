@@ -75,7 +75,7 @@ gsap.to(".title-anim", {
 });
 
 gsap.to(".site", {
-    delay: 18,
+    delay: 16, //18
     duration: 1,
     ease: "power4.out",
     opacity: 1,

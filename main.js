@@ -45,6 +45,27 @@ loader.load( './space/scene.gltf', (gltf) => {
             renderer.render(scene, camera);
         };
         animate();
+
+        setTimeout(() => {
+            scene.remove(model);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 5);
+            directionalLight.position.set(0, 0, 1);
+            scene.add(directionalLight);
+            loader.load('./vaisseau/scene.gltf', (newGltf) => {
+                const newModel = newGltf.scene;
+                newModel.position.set(0, 0, 0);
+                scene.add(newModel);
+            });
+            const animate = function () {
+                requestAnimationFrame(animate);
+                if (camera.position.z <= 900)
+                    camera.position.z += 5;
+                renderer.render(scene, camera);
+            };
+            animate();
+            camera.position.set(0, 25, 0);
+            camera.rotation.set(0, 0, 0);
+        }, 18000);
     },
 );
 // resize anim bar at the begining
@@ -79,11 +100,43 @@ var typewriter = new Typewriter(titre, {})
 typewriter.pauseFor(6000)
     .typeString("Hello,")
     .pauseFor(700)
-    .typeString(" i'm")
+    .typeString(" I'm")
     .pauseFor(900)
     .typeString(" Nicolas Dumetz.")
     .pauseFor(600)
     .start();
+
+// const navette = document.getElementById("navette");
+// let posX = 0;
+// let posY = 0;
+// const step = 10;
+// const rotationStep = 5;
+// function moveNavette(x, y) {
+//     navette.style.left = x + "px";
+//     navette.style.top = y + "px";
+// }
+// document.addEventListener("keydown", function(event) {
+//     switch(event.key) {
+//         case "ArrowUp":
+//             console.log("coucou");
+//             posY -= step;
+//             moveNavette(posX, posY);
+//             break;
+//         case "ArrowDown":
+//             posY += step;
+//             moveNavette(posX, posY);
+//             break;
+//         case "ArrowLeft":
+//             posX -= step;
+//             moveNavette(posX, posY);
+//             break;
+//         case "ArrowRight":
+//             posX += step;
+//             moveNavette(posX, posY);
+//             break;
+//     }
+// });
+
 
 
 // const scene = new THREE.Scene();

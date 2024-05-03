@@ -140,3 +140,12 @@ body {
 .cv h1 {
     color: white;
 }
+
+#navette {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease;
+}

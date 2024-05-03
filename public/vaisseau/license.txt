@@ -1,0 +1,11 @@
+Model Information:
+* title:	Vaisseau
+* source:	https://sketchfab.com/3d-models/vaisseau-7c6d971d73484040a3fe068e71c45b64
+* author:	lantra (https://sketchfab.com/lantra)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Vaisseau" (https://sketchfab.com/3d-models/vaisseau-7c6d971d73484040a3fe068e71c45b64) by lantra (https://sketchfab.com/lantra) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
